@@ -11,8 +11,7 @@ for (abc = 'a'; abc <= 'z'; abc++)
 {
 if (abc == 'q' || abc == 'e')
 {
-    abc++;
-
+continue;
 }
 else
 {
