@@ -15,7 +15,7 @@ continue;
 }
 else
 {
- putchar(abc);
+putchar(abc);
 }
 }
 putchar('\n');
