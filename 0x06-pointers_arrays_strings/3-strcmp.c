@@ -3,7 +3,7 @@
  * _strncpy - a function that copies a string
  * @s1: destination input
  * @s2: second input
- * Return: dest
+ * Return: 0 if s1=s2, > 0 if s1[i]> s2[i], <0 if s1[i]< s2[i]
  */
 int _strcmp(char *s1, char *s2)
 {
