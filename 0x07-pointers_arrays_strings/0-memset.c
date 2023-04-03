@@ -1,11 +1,20 @@
 #include "main.h"
-#include <stdio.h>
 /**
- * reset_to_98 - a function that updates the value it points to 98
- * @n: pointer input
- * Return: pointer
+ * _memset - a function thats fills memory with a constant byte
+ * @s: input
+ * @b: input
+ * @n: input
+ * Return: a pointer to the memory area s
  */
-void reset_to_98(int *n)
+char *_memset(char *s, char b, unsigned int n)
 {
-*n = 98;
+int i = 0;
+
+while (n > 0)
+{
+*(s + i) = b;
+n--;
+i++;
+}
+return (s);
 }
