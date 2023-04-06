@@ -8,7 +8,7 @@ int test(int n, int k);
  */
 int is_prime_number(int n)
 {
-if (n < 0)
+if (n < 2)
 return (0);
 return (test(n, 2));
 }
@@ -22,7 +22,7 @@ int test(int n, int k)
 {
 if (k == n)
 return (1);
-if (n % K == 0)
+if (n % k == 0)
 return (0);
 return (test(n, k + 1));
 }
