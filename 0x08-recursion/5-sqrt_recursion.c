@@ -1,6 +1,6 @@
 #include "main.h"
 
-
+int _sqr(int n, int s);
 /**
  * _sqrt_recursion - return the square of number
  * @n: input
@@ -10,19 +10,19 @@ int _sqrt_recursion(int n)
 {
 if (n < 0)
 return (-1);
-return (sqr(n, 0));
+return (_sqr(n, 0));
 }
 /**
- * sqr - test
+ * _sqr - test
  * @n: input
  * @s: input
  * Return: square
  */
-int sqr(int n, int s)
+int _sqr(int n, int s)
 {
-if (s * s > 0)
+if (s * s > n)
 return (-1);
 if (s * s == n)
 return (s);
-return (sqr(n, s + 1));
+return (_sqr(n, s + 1));
 }
