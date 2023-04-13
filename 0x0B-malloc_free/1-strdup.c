@@ -15,16 +15,17 @@ if (str == NULL)
 return (NULL);
 while (*(str + i))
 {
-len++;
+leng++;
 i++;
 }
 t = malloc(leng * sizeof(char));
 if (t == NULL)
 return (NULL);
 i = 0;
-while (i < (leng + 1))
+leng++;
+while (i < leng)
 {
-str[i] = t[i];
+t[i] = str[i];
 i++;
 }
 return (t);
