@@ -5,10 +5,10 @@
 #include <stdlib.h>
 
 /**
- * dog - structure
- * @name: input
- * @age: input
- * @owner: input
+ * dog - a type
+ * @name: name of the dog
+ * @age: age of the dog
+ * @owner: name of the owner
  */
 
 struct dog
