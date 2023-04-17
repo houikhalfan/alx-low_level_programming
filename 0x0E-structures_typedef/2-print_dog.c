@@ -9,15 +9,12 @@ if (d == NULL)
 return;
 
 if (d->name == NULL)
-print("Name: %s\n", d->name);
+printf("Name: %s\n", d->name);
 else
-print("Name: %s\n", d->name);
-if (d->age == NULL)
-print("Age: %s\n", d->age);
-else
-print("Age: %s\n", d->age);
+printf("Name: %s\n", d->name);
+printf("Age: %f\n", d->age);
 if (d->owner == NULL)
-print("Owner: %s\n", d->owner);
+printf("Owner: %s\n", d->owner);
 else
-print("Owner: %s\n", d->owner);
+printf("Owner: %s\n", d->owner);
 }
