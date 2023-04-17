@@ -5,8 +5,8 @@
 #include <stdlib.h>
 
 /**
- * dog - 
- * @name: input 
+ * dog - structure
+ * @name: input
  * @age: input
  * @owner: input
  */
