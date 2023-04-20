@@ -28,11 +28,11 @@ if (get_op_func(op) == NULL || op[1] != '\0')
 printf("Error\n");
 exit(99);
 }
-if ((*op == '/' && m == 0 || (*op == '%' && m == 0))
+if ((*op == '/' && m == 0) || (*op == '%' && m == 0))
 {
 printf("Error\n");
 exit(100);
 }
-printf("%d\n", get_op_funct(op)(n, m));
+printf("%d\n", get_op_func(op)(n, m));
 return (0);
 }
