@@ -15,7 +15,7 @@ char *ar;
 va_start(ap, n);
 for (i = 0; i < n; i++)
 {
-ar = va_arg(ap, char *);	
+ar = va_arg(ap, char *);
 if (ar  == NULL)
 printf("(nil)");
 else
