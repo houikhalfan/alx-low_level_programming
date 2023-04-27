@@ -5,7 +5,7 @@
  * @str: string
  * Return: length
  */
-int _strl(cont char *str)
+int _strl(const char *str)
 {
 int l;
 for (l = 0; str[l] != '\0'; l++)
@@ -32,7 +32,7 @@ if (nnode == NULL)
 return (NULL);
 
 nnode->str = strdup(str);
-nnode->l = _strl(str);
+nnode->len = _strl(str);
 if (head == NULL)
 nnode->next = NULL;
 else
