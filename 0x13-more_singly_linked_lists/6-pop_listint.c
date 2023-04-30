@@ -7,7 +7,7 @@
  */
 int pop_listint(listint_t **head)
 {
-listint_t *t;	
+listint_t *t;
 int nod;
 if (*head == NULL)
 return (0);
