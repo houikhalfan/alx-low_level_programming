@@ -12,7 +12,7 @@ size_t nu = 0;
 long int f;
 while (head)
 {
-f = head - head->next;
+f = head - (head->next);
 nu++;
 printf("[%p] %d\n", (void *)head, head->n);
 if (f > 0)
