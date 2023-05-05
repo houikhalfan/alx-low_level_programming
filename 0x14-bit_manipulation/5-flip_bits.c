@@ -9,9 +9,9 @@
  */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-unsigned long di;
+unsigned long int di;
 unsigned int d = 0;
-d = n ^ m;
+di = n ^ m;
 do {
 d += (di & 1);
 di >>= 1;
