@@ -10,7 +10,7 @@ int get_bit(unsigned long int n, unsigned int index)
 {
 int bit;
 unsigned int max_bi;
-max_bi = (sizeof(unsigned kong int) * 8);
+max_bi = (sizeof(unsigned long int) * 8);
 if (index > max_bi)
 return (-1);
 bit = ((n >> index) & 1);
