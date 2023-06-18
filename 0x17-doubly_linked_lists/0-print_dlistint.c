@@ -11,7 +11,7 @@ int c = 0;
 const dlistint_t *temp = h;
 while (temp != NULL)
 {
-printf("%d\n", h->n);
+printf("%d\n", temp->n);
 temp = temp->next;
 c++;
 }
