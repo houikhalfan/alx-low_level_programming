@@ -1,2 +1,5 @@
 #!/bin/bash
-gcc -fPIX -c *.c && gcc -shared -o liball.so *.o
+for file in $c_files; do
+    gcc -c -fPIC "$file" -o "${file%.c}.o"
+done
+gcc -shared -o liball.so *.o
