@@ -16,6 +16,9 @@ hash_table_t *table;
 table = malloc(sizeof(hash_table_t));
 if (table == NULL)
 return (NULL);
+if (size == 0)
+return (NULL);
+
 table->size = size;
 table->array = calloc(size, sizeof(hash_node_t *));
 if (table->array == NULL)
