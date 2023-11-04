@@ -1,4 +1,4 @@
-#include "hash_tables.h"
+
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
@@ -10,7 +10,7 @@
  * hash table, or NULL
  */
 
-hash_table_t *hash_table_create(unsigned long int size)
+hash_table_t *hash_table_reate(unsigned long int size)
 {
 hash_table_t *table;
 table = malloc(sizeof(hash_table_t));
