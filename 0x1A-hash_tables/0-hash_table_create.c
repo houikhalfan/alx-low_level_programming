@@ -1,34 +1,22 @@
-#include <stdlib.h>
-#include "hash_tables.h"
+#!/usr/bin/env bash
+# Creates the file /var/run/myscript.pid containing its PID
+# Displays To infinity and beyond indefinitely
+# Displays I hate the kill command when receiving a SIGTERM signal
+# Displays Y U no love me?! when receiving a SIGINT signal
+# Deletes the file /var/run/myscript.pid and terminates itself when receiving a SIGQUIT or SIGTERM signal.
 
-/**
- * hash_table_create - creates a hash table
- * @size: size of the array
- * Return: pointer to the newly created hash table, or NULL if failed
- */
-hash_table_t *hash_table_create(unsigned long int size)
-{
-	hash_table_t *hash_table = NULL;
-	unsigned long int i;
-
-	/* Allocate memory for the hash table */
-	hash_table = malloc(sizeof(hash_table_t));
-	if (hash_table == NULL)
-		return (NULL);
-
-	/* Allocate memory for the array */
-	hash_table->array = malloc(sizeof(hash_node_t *) * size);
-	if (hash_table->array == NULL)
-	{
-		free(hash_table);
-		return (NULL);
-	}
-
-	/* Initialize each element of the array to NULL */
-	for (i = 0; i < size; i++)
-		hash_table->array[i] = NULL;
-
-	hash_table->size = size;
-
-	return (hash_table);
+terminator() {
+    rm /var/run/myscript.pid
+    exit
 }
+
+echo "$$" > /var/run/myscript.pid
+
+trap 'echo "Y U no love me?!"' SIGINT
+trap 'echo "I hate the kill command"' SIGTERM
+trap 'terminator' SIGQUIT
+
+while true; do
+    echo "To infinity and beyond"
+    sleep 2
+done
