@@ -1,22 +1,27 @@
-#!/usr/bin/env bash
-# Creates the file /var/run/myscript.pid containing its PID
-# Displays To infinity and beyond indefinitely
-# Displays I hate the kill command when receiving a SIGTERM signal
-# Displays Y U no love me?! when receiving a SIGINT signal
-# Deletes the file /var/run/myscript.pid and terminates itself when receiving a SIGQUIT or SIGTERM signal.
+#include "hash_tables.h"
 
-terminator() {
-    rm /var/run/myscript.pid
-    exit
+/**
+ * hash_table_create - Creates a hash table.
+ * @size: The size of the array.
+ *
+ * Return: If an error occurs - NULL.
+ *         Otherwise - a pointer to the new hash table.
+ */
+hash_table_t *hash_table_create(unsigned long int size)
+{
+	hash_table_t *ht;
+	unsigned long int i;
+
+	ht = malloc(sizeof(hash_table_t));
+	if (ht == NULL)
+		return (NULL);
+
+	ht->size = size;
+	ht->array = malloc(sizeof(hash_node_t *) * size);
+	if (ht->array == NULL)
+		return (NULL);
+	for (i = 0; i < size; i++)
+		ht->array[i] = NULL;
+
+	return (ht);
 }
-
-echo "$$" > /var/run/myscript.pid
-
-trap 'echo "Y U no love me?!"' SIGINT
-trap 'echo "I hate the kill command"' SIGTERM
-trap 'terminator' SIGQUIT
-
-while true; do
-    echo "To infinity and beyond"
-    sleep 2
-done
